@@ -3,41 +3,38 @@ package com.example.fuego_physicscalculator;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import java.util.ArrayList;
 
-public class FragAdapter extends FragmentPagerAdapter {
+public class FragAdapter extends FragmentStateAdapter {
 
-    private final ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
-    private final ArrayList<String> fragmentTitle = new ArrayList<>();
+    //Sets the title for each tabs
+    private String[] titles= new String[]{"Area", "Volume"};
 
-    public FragAdapter(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
+    //Constructor for Fragment Activity
+    public FragAdapter(@NonNull FragmentActivity fragmentActivity) {
+        super(fragmentActivity);
     }
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
-        return fragmentArrayList.get(position);
+    public Fragment createFragment(int position) {
+        //Allows the switching of tabs
+        switch (position){
+            case 0:
+                return new AreaFormulas();
+            case 1:
+                return new VolumeFormulas();
+        }
+        return new AreaFormulas();
     }
 
     @Override
-    public int getCount() {
-        return fragmentArrayList.size();
-    }
-
-    public void addFragment (Fragment fragment, String title){
-
-        fragmentArrayList.add(fragment);
-        fragmentTitle.add(title);
-
-    }
-
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return fragmentTitle.get(position);
+    public int getItemCount() {
+        return titles.length;
     }
 }
