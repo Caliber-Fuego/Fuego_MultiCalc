@@ -1,13 +1,12 @@
-package com.example.fuego_physicscalculator;
+package com.example.fuego_physicscalculator.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
+import com.example.fuego_physicscalculator.Controller.FragAdapter;
+import com.example.fuego_physicscalculator.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 

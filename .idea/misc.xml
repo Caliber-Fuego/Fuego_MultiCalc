@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Fuego_PhysicsCalculator/app/src/main/res/layout/activity_main.xml" value="0.21195652173913043" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Fuego_PhysicsCalculator/app/src/main/res/layout/fragment_area_formulas.xml" value="0.21195652173913043" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Fuego_PhysicsCalculator/app/src/main/res/layout/fragment_area_formulas.xml" value="0.4" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Fuego_PhysicsCalculator/app/src/main/res/layout/fragment_blank3.xml" value="0.22871376811594202" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Fuego_PhysicsCalculator/app/src/main/res/layout/fragment_circle.xml" value="0.22871376811594202" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Fuego_PhysicsCalculator/app/src/main/res/layout/fragment_parallelogram.xml" value="0.22871376811594202" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Fuego_PhysicsCalculator/app/src/main/res/layout/fragment_volume_formulas.xml" value="0.21195652173913043" />
       </map>
     </option>
