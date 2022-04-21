@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.fuego_physicscalculator.Controller.FragAdapter;
 import com.example.fuego_physicscalculator.R;
@@ -30,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.setAdapter(fragAdapter);
         new TabLayoutMediator(tabs, viewPager,((tab, position) -> tab.setText(titles[position]))).attach();
+    }
 
-
-
-
+    public void backButton (View v){
+        finish();
     }
 }

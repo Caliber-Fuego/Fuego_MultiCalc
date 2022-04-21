@@ -3,7 +3,6 @@ package com.example.fuego_physicscalculator.View;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +13,6 @@ import android.widget.TextView;
 
 import com.example.fuego_physicscalculator.Controller.Calculations;
 import com.example.fuego_physicscalculator.R;
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
 public class AreaFormulas extends Fragment {
 
@@ -30,11 +27,6 @@ public class AreaFormulas extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_area_formulas, container, false);
-        Button rectanglebtn = (Button) v.findViewById(R.id.rectanglebutton);
-        Button trianglebtn  = (Button) v.findViewById(R.id.trianglebutton);
-        Button circlebtn    = (Button) v.findViewById(R.id.circlebutton);
-        Button parallelobtn = (Button) v.findViewById(R.id.parallelogrambutton);
-        Button trapezoidbtn = (Button) v.findViewById(R.id.trapezoidbutton);
         Button solvebtn     = (Button) v.findViewById(R.id.solvebutton);
 
         TextView variable1 = (TextView) v.findViewById(R.id.variable1display);
@@ -52,77 +44,36 @@ public class AreaFormulas extends Fragment {
         variable3.setVisibility(View.INVISIBLE);
         var3edit.setVisibility(View.INVISIBLE);
 
-
-        rectanglebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shape = "Rectangle";
+        switch (calc.getShapeData()){
+            case "Rectangle":
                 variable1.setText("Enter the Length (l)");
                 variable2.setText("Enter the width  (w)");
                 variable2.setVisibility(View.VISIBLE);
                 var2edit.setVisibility(View.VISIBLE);
                 variable3.setVisibility(View.INVISIBLE);
                 var3edit.setVisibility(View.INVISIBLE);
-
-            }
-        });
-
-        trianglebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shape = "Triangle";
+                break;
+            case "Triangle":
                 variable1.setText("Enter the base (b)");
                 variable2.setText("Enter the height  (h)");
                 variable2.setVisibility(View.VISIBLE);
                 var2edit.setVisibility(View.VISIBLE);
                 variable3.setVisibility(View.INVISIBLE);
                 var3edit.setVisibility(View.INVISIBLE);
-            }
-        });
-
-        circlebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shape = "Circle";
+                break;
+            case "Circle":
                 variable1.setText("Enter the radius (r)");
                 variable2.setVisibility(View.INVISIBLE);
                 var2edit.setVisibility(View.INVISIBLE);
                 variable3.setVisibility(View.INVISIBLE);
                 var3edit.setVisibility(View.INVISIBLE);
-            }
-        });
-        parallelobtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shape = "Parallelogram";
-                variable1.setText("Enter the base (b)");
-                variable2.setText("Enter the height  (h)");
-                variable2.setVisibility(View.VISIBLE);
-                var2edit.setVisibility(View.VISIBLE);
-                variable3.setVisibility(View.INVISIBLE);
-                var3edit.setVisibility(View.INVISIBLE);
-
-            }
-        });
-        trapezoidbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shape = "Trapezoid";
-                variable1.setText("Enter the first base (b1)");
-                variable2.setText("Enter the second base  (b2)");
-                variable3.setText("Enter the height (h)");
-                variable2.setVisibility(View.VISIBLE);
-                var2edit.setVisibility(View.VISIBLE);
-                variable3.setVisibility(View.VISIBLE);
-                var3edit.setVisibility(View.VISIBLE);
-
-            }
-        });
+                break;
+        }
 
         solvebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (shape){
+                switch (calc.getShapeData()){
                     case "Rectangle":
                         calc.rectangleArea(var1edit, var2edit, results);
                         break;
@@ -132,11 +83,6 @@ public class AreaFormulas extends Fragment {
                     case "Circle":
                         calc.circleArea(var1edit, results);
                         break;
-                    case "Parallelogram":
-                        calc.parallelogramArea(var1edit, var2edit, results);
-                        break;
-                    case "Trapezoid":
-                        calc.trapezoidArea(var1edit, var2edit, var3edit, results);
                 }
             }
         });

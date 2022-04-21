@@ -1,15 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.VolumeFormulas">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Test2"
-        android:gravity="center"/>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/volumebutton"
+        android:layout_width="105dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        android:text="Volume"
+        app:layout_constraintEnd_toStartOf="@+id/widthbutton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/widthbutton"
+        android:layout_width="105dp"
+        android:layout_height="51dp"
+        android:text="Width"
+        app:layout_constraintBottom_toBottomOf="@+id/volumebutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/volumebutton"
+        app:layout_constraintTop_toTopOf="@+id/volumebutton" />
+
+    <Button
+        android:id="@+id/lengthbutton"
+        android:layout_width="105dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="72dp"
+        android:text="Length
+"
+        app:layout_constraintEnd_toStartOf="@+id/heightbutton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/heightbutton"
+        android:layout_width="105dp"
+        android:layout_height="51dp"
+        android:text="Height"
+        app:layout_constraintBottom_toBottomOf="@+id/lengthbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lengthbutton"
+        app:layout_constraintTop_toTopOf="@+id/lengthbutton" />
+
+    <TextView
+        android:id="@+id/solvedisplay"
+        android:layout_width="85dp"
+        android:layout_height="45dp"
+        android:text="Solve for A"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <TextView
+        android:id="@+id/variable1display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/solvedisplay"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/solvedisplay"
+        app:layout_constraintTop_toBottomOf="@+id/solvedisplay" />
+
+    <TextView
+        android:id="@+id/variable2display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/solvedisplay"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/solvedisplay"
+        app:layout_constraintTop_toBottomOf="@+id/solvedisplay" />
+
+    <TextView
+        android:id="@+id/variable3display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/solvedisplay"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="@+id/solvedisplay"
+        app:layout_constraintTop_toBottomOf="@+id/solvedisplay" />
+
+    <TextView
+        android:id="@+id/resultsdisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="388dp"
+        android:text="The result is."
+        app:layout_constraintEnd_toEndOf="@+id/solvedisplay"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="@+id/solvedisplay"
+        app:layout_constraintTop_toBottomOf="@+id/solvedisplay" />
+
+    <EditText
+        android:id="@+id/variable1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/variable1display"
+        app:layout_constraintStart_toStartOf="@+id/variable1display"
+        app:layout_constraintTop_toBottomOf="@+id/variable1display" />
+
+    <EditText
+        android:id="@+id/variable2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/variable2display"
+        app:layout_constraintStart_toStartOf="@+id/variable2display"
+        app:layout_constraintTop_toBottomOf="@+id/variable2display" />
+
+    <EditText
+        android:id="@+id/variable3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/variable3display"
+        app:layout_constraintStart_toStartOf="@+id/variable3display"
+        app:layout_constraintTop_toBottomOf="@+id/variable3display" />
+
+    <Button
+        android:id="@+id/solvebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="@+id/solvedisplay"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/solvedisplay"
+        app:layout_constraintTop_toBottomOf="@+id/variable3" />
+</androidx.constraintlayout.widget.ConstraintLayout>
