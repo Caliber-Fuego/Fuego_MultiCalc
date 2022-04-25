@@ -1,4 +1,4 @@
-package com.example.fuego_physicscalculator.View;
+package com.example.fuego_physicscalculator.View.GeometryFragments;
 
 import android.os.Bundle;
 
@@ -231,8 +231,6 @@ public class VolumeFormulas extends Fragment {
             }
         });
 
-
         return v;
-
     }
 }

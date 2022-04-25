@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.fuego_physicscalculator.View.AreaFormulas;
-import com.example.fuego_physicscalculator.View.VolumeFormulas;
+import com.example.fuego_physicscalculator.View.GeometryFragments.AreaFormulas;
+import com.example.fuego_physicscalculator.View.GeometryFragments.VolumeFormulas;
 
 public class FragAdapter extends FragmentStateAdapter {
 

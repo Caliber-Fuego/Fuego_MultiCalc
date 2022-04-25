@@ -1,4 +1,4 @@
-package com.example.fuego_physicscalculator.View;
+package com.example.fuego_physicscalculator.View.GeometryFragments;
 
 import android.os.Bundle;
 
@@ -38,11 +38,6 @@ public class AreaFormulas extends Fragment {
         EditText var2edit = (EditText) v.findViewById(R.id.variable2);
         EditText var3edit = (EditText) v.findViewById(R.id.variable3);
 
-        shape = "Rectangle";
-        variable1.setText("Enter the Length (l)");
-        variable2.setText("Enter the width  (w)");
-        variable3.setVisibility(View.INVISIBLE);
-        var3edit.setVisibility(View.INVISIBLE);
 
         switch (calc.getShapeData()){
             case "Rectangle":

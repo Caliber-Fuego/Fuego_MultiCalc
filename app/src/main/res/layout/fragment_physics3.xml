@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.PhysicsFragments.PhysicsFragment3">
+
+    <TextView
+        android:id="@+id/solvequestiondisplay"
+        android:layout_width="83dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="100dp"
+        android:text="Solve for"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/var1display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Gravitational Acceleration (g)"
+        app:layout_constraintEnd_toEndOf="@+id/solvequestiondisplay"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/solvequestiondisplay"
+        app:layout_constraintTop_toBottomOf="@+id/solvequestiondisplay" />
+
+    <TextView
+        android:id="@+id/var2display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Initial Velocity"
+        app:layout_constraintEnd_toEndOf="@+id/solvequestiondisplay"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/solvequestiondisplay"
+        app:layout_constraintTop_toBottomOf="@+id/solvequestiondisplay" />
+
+    <TextView
+        android:id="@+id/var2displayunit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="0"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/variable2edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/variable1edit"
+        app:layout_constraintVertical_bias="0.653" />
+
+    <TextView
+        android:id="@+id/var2dusplayunit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(V )"
+        app:layout_constraintBottom_toBottomOf="@+id/var2display"
+        app:layout_constraintStart_toEndOf="@+id/var2display"
+        app:layout_constraintTop_toTopOf="@+id/var2display"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/var3display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:text="Time of Fall (t)"
+        app:layout_constraintEnd_toEndOf="@+id/solvequestiondisplay"
+        app:layout_constraintStart_toStartOf="@+id/solvequestiondisplay"
+        app:layout_constraintTop_toBottomOf="@+id/solvequestiondisplay" />
+
+    <EditText
+        android:id="@+id/variable1edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:text="9.80655"
+        app:layout_constraintEnd_toEndOf="@+id/var1display"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="@+id/var1display"
+        app:layout_constraintTop_toBottomOf="@+id/var1display" />
+
+    <EditText
+        android:id="@+id/variable2edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/var2display"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/var2display"
+        app:layout_constraintTop_toBottomOf="@+id/var2display" />
+
+    <EditText
+        android:id="@+id/variable3edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/var3display"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/var3display"
+        app:layout_constraintTop_toBottomOf="@+id/var3display" />
+
+    <Button
+        android:id="@+id/solvebutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Solve"
+        app:layout_constraintEnd_toEndOf="@+id/variable3edit"
+        app:layout_constraintStart_toStartOf="@+id/variable3edit"
+        app:layout_constraintTop_toBottomOf="@+id/variable3edit" />
+
+    <TextView
+        android:id="@+id/resultsdisplay2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="The result is."
+        app:layout_constraintEnd_toEndOf="@+id/solvebutton2"
+        app:layout_constraintStart_toStartOf="@+id/solvebutton2"
+        app:layout_constraintTop_toBottomOf="@+id/solvebutton2" />
+
+    <ImageView
+        android:id="@+id/physicsformula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/formula_freefalldistance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

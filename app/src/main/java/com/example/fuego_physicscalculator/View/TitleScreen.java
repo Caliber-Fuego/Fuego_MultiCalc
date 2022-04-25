@@ -19,4 +19,9 @@ public class TitleScreen extends AppCompatActivity {
         Intent openGeometry = new Intent(this, GeometryOptions.class);
         startActivity(openGeometry);
     }
+
+    public void goToPhysics (View view){
+        Intent openPhysics = new Intent(this, PhysicsActivity.class);
+        startActivity(openPhysics);
+    }
 }
