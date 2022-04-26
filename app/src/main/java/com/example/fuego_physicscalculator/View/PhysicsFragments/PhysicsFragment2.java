@@ -40,22 +40,61 @@ public class PhysicsFragment2 extends Fragment {
         EditText var2edit = (EditText) v.findViewById(R.id.variable2edit);
         EditText var3edit = (EditText) v.findViewById(R.id.variable3edit);
 
-        varsolve.setText("Solve for t");
-        variable1.setText("Gravitational Acceleration (g)");
-        variable2.setText("Initial Velocity");
-        var2displayunit1.setText("0");
-        var2displayunit2.setText("(V )");
-        variable3.setText("Freefall Distance (h)");
-        var2displayunit1.setVisibility(View.VISIBLE);
-        var2displayunit2.setVisibility(View.VISIBLE);
-        formuladisplay.setImageResource(R.drawable.formula_freefalltime);
+
+        switch (calc.getPhysicsData()) {
+            case "Freefall":
+                varsolve.setText("Solve for t");
+                variable1.setText("Gravitational Acceleration (g)");
+                variable2.setText("Initial Velocity");
+                var2displayunit1.setText("0");
+                var2displayunit2.setText("(V )");
+                variable3.setText("Freefall Distance (h)");
+                var2displayunit1.setVisibility(View.VISIBLE);
+                var2displayunit2.setVisibility(View.VISIBLE);
+                formuladisplay.setImageResource(R.drawable.formula_freefalltime);
+                break;
+            case "Velocity":
+                varsolve.setText("Solve for Average Velocity (v¯)");
+                variable1.setText("Displacement  (Δx)");
+                variable2.setText("Change in Time (Δt)");
+                var2displayunit1.setVisibility(View.INVISIBLE);
+                var2displayunit2.setVisibility(View.INVISIBLE);
+                variable3.setVisibility(View.INVISIBLE);
+                var3edit.setVisibility(View.INVISIBLE);
+                var1edit.setText("0");
+                varsolve.setTextSize(13);
+                formuladisplay.setImageResource(R.drawable.formula_velocity);
+                break;
+            case "Circular":
+                varsolve.setText("Solve for Angular Frequency(w)");
+                variable1.setText("Time Period (t)");
+                variable2.setVisibility(View.INVISIBLE);
+                var2displayunit1.setVisibility(View.INVISIBLE);
+                var2displayunit2.setVisibility(View.INVISIBLE);
+                variable3.setVisibility(View.INVISIBLE);
+                var2edit.setVisibility(View.INVISIBLE);
+                var3edit.setVisibility(View.INVISIBLE);
+                var1edit.setText("0");
+                varsolve.setTextSize(12);
+                formuladisplay.setImageResource(R.drawable.formula_centripetalfreq);
+                break;
+        }
 
 
 
         solvebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calc.freefalltime(var1edit, var3edit, results);
+                switch (calc.getPhysicsData()) {
+                    case "Freefall":
+                        calc.freefalltime(var1edit, var3edit, results);
+                        break;
+                    case "Velocity":
+                        calc.velocityaverage(var1edit, var2edit, results);
+                    case "Circular":
+                        calc.circularfrequency(var1edit, results);
+                        break;
+                }
             }
         });
         return v;

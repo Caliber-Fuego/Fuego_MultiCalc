@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/solvequestiondisplay"
         android:layout_width="83dp"
-        android:layout_height="26dp"
+        android:layout_height="46dp"
         android:layout_marginTop="100dp"
         android:text="Solve for"
         android:textAlignment="center"
@@ -138,8 +138,9 @@
 
     <ImageView
         android:id="@+id/physicsformula"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="61dp"
+        android:scaleType="fitXY"
         android:layout_marginBottom="16dp"
         android:src="@drawable/formula_freefalldistance"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -21,7 +21,7 @@ public class TitleScreen extends AppCompatActivity {
     }
 
     public void goToPhysics (View view){
-        Intent openPhysics = new Intent(this, PhysicsActivity.class);
+        Intent openPhysics = new Intent(this, PhysicsOptions.class);
         startActivity(openPhysics);
     }
 }

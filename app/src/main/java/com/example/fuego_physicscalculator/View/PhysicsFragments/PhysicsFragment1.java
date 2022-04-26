@@ -39,22 +39,59 @@ public class PhysicsFragment1 extends Fragment {
         EditText var2edit = (EditText) v.findViewById(R.id.variable2edit);
         EditText var3edit = (EditText) v.findViewById(R.id.variable3edit);
 
-        varsolve.setText("Solve for h");
-        variable1.setText("Gravitational Acceleration (g)");
-        variable2.setText("Initial Velocity");
-        var2displayunit1.setText("0");
-        var2displayunit2.setText("(V )");
-        variable3.setText("Time of Fall (t)");
-        var2displayunit1.setVisibility(View.VISIBLE);
-        var2displayunit2.setVisibility(View.VISIBLE);
-        formuladisplay.setImageResource(R.drawable.formula_freefalldistance);
 
-
+        switch (calc.getPhysicsData()){
+            case "Freefall":
+                varsolve.setText("Solve for h");
+                variable1.setText("Gravitational Acceleration (g)");
+                variable2.setText("Initial Velocity");
+                var2displayunit1.setText("0");
+                var2displayunit2.setText("(V )");
+                variable3.setText("Time of Fall (t)");
+                var2displayunit1.setVisibility(View.VISIBLE);
+                var2displayunit2.setVisibility(View.VISIBLE);
+                variable3.setVisibility(View.VISIBLE);
+                formuladisplay.setImageResource(R.drawable.formula_freefalldistance);
+                break;
+            case "Velocity":
+                varsolve.setText("Solve for Speed (s)");
+                variable1.setText("Distance  (d)");
+                variable2.setText("Time (t)");
+                var2displayunit1.setVisibility(View.INVISIBLE);
+                var2displayunit2.setVisibility(View.INVISIBLE);
+                variable3.setVisibility(View.INVISIBLE);
+                var3edit.setVisibility(View.INVISIBLE);
+                var1edit.setText("0");
+                formuladisplay.setImageResource(R.drawable.formula_speed);
+                break;
+            case "Circular":
+                varsolve.setText("Solve for Centripetal Acceleration (Ac)");
+                variable1.setText("Tangential Velocity (Vt)");
+                variable2.setText("Radius (r)");
+                var2displayunit1.setVisibility(View.INVISIBLE);
+                var2displayunit2.setVisibility(View.INVISIBLE);
+                variable3.setVisibility(View.INVISIBLE);
+                var3edit.setVisibility(View.INVISIBLE);
+                var1edit.setText("0");
+                varsolve.setTextSize(12);
+                formuladisplay.setImageResource(R.drawable.formula_centripetalaccel);
+                break;
+        }
 
         solvebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calc.freefalldistance(var1edit, var3edit, results);
+                switch (calc.getPhysicsData()) {
+                    case "Freefall":
+                        calc.freefalldistance(var1edit, var3edit, results);
+                        break;
+                    case "Velocity":
+                        calc.velocitynormal(var1edit, var2edit, results);
+                        break;
+                    case "Circular":
+                        calc.circularacceleration(var1edit, var2edit, results);
+                        break;
+                }
             }
         });
         return v;

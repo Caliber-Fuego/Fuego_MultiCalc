@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fuego_PhysicsCalculator">
         <activity
+            android:name=".View.PhysicsOptions"
+            android:exported="false" />
+        <activity
             android:name=".View.PhysicsActivity"
             android:exported="false" />
         <activity

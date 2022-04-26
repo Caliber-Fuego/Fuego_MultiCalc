@@ -40,21 +40,58 @@ public class PhysicsFragment3 extends Fragment {
         EditText var2edit = (EditText) v.findViewById(R.id.variable2edit);
         EditText var3edit = (EditText) v.findViewById(R.id.variable3edit);
 
-        varsolve.setText("Solve for v");
-        variable1.setText("Gravitational Acceleration (g)");
-        variable2.setText("Initial Velocity");
-        var2displayunit1.setText("0");
-        var2displayunit2.setText("(V )");
-        variable3.setText("Time of Fall (t)");
-        var2displayunit1.setVisibility(View.VISIBLE);
-        var2displayunit2.setVisibility(View.VISIBLE);
-        formuladisplay.setImageResource(R.drawable.formula_freefallvelocity);
+        switch (calc.getPhysicsData()) {
+            case "Freefall":
+                varsolve.setText("Solve for v");
+                variable1.setText("Gravitational Acceleration (g)");
+                variable2.setText("Initial Velocity");
+                var2displayunit1.setText("0");
+                var2displayunit2.setText("(V )");
+                variable3.setText("Time of Fall (t)");
+                var2displayunit1.setVisibility(View.VISIBLE);
+                var2displayunit2.setVisibility(View.VISIBLE);
+                formuladisplay.setImageResource(R.drawable.formula_freefallvelocity);
+                break;
+            case "Velocity":
+                varsolve.setText("Solve for Average Acceleration (a¯)");
+                variable1.setText("Change in Velocity  (Δv)");
+                variable2.setText("Change in Time (Δt)");
+                var2displayunit1.setVisibility(View.INVISIBLE);
+                var2displayunit2.setVisibility(View.INVISIBLE);
+                variable3.setVisibility(View.INVISIBLE);
+                var3edit.setVisibility(View.INVISIBLE);
+                var1edit.setText("0");
+                varsolve.setTextSize(13);
+                formuladisplay.setImageResource(R.drawable.formula_acceleration);
+                break;
+            case "Circular":
+                varsolve.setText("Solve for Tangential Velocity (Vt)");
+                variable1.setText("Angular Velocity (w)");
+                variable2.setText("Radius (r)");
+                var2displayunit1.setVisibility(View.INVISIBLE);
+                var2displayunit2.setVisibility(View.INVISIBLE);
+                variable3.setVisibility(View.INVISIBLE);
+                var3edit.setVisibility(View.INVISIBLE);
+                var1edit.setText("0");
+                varsolve.setTextSize(12);
+                formuladisplay.setImageResource(R.drawable.formula_tangvelocity);
+                break;
+        }
 
 
         solvebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calc.freefallvelocity(var1edit, var2edit, var3edit, results);
+                switch (calc.getPhysicsData()) {
+                    case "Freefall":
+                        calc.freefallvelocity(var1edit, var2edit, var3edit, results);
+                        break;
+                    case "Velocity":
+                        calc.velocityaccel(var1edit, var2edit, results);
+                    case "Circular":
+                        calc.circularvelocity(var1edit, var2edit, results);
+                        break;
+                }
             }
         });
         return v;

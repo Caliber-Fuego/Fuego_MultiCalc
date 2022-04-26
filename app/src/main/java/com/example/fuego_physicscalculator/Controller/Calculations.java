@@ -23,6 +23,26 @@ public class Calculations {
         Calculations.physicsData = physicsData;
     }
 
+    //Velocity Formulas
+    public void velocitynormal(EditText var1, EditText var2, TextView results){
+        double d = Double.parseDouble(var1.getText().toString());
+        double t = Double.parseDouble(var2.getText().toString());
+        double answer = d/t;
+        results.setText("The Speed is " +String.valueOf(answer));
+    }
+    public void velocityaverage(EditText var1, EditText var2, TextView results){
+        double d = Double.parseDouble(var1.getText().toString());
+        double t = Double.parseDouble(var2.getText().toString());
+        double answer = d/t;
+        results.setText("The Average Velocity is " +String.valueOf(answer));
+    }
+    public void velocityaccel(EditText var1, EditText var2, TextView results){
+        double v = Double.parseDouble(var1.getText().toString());
+        double t = Double.parseDouble(var2.getText().toString());
+        double answer = v/t;
+        results.setText("The Average Acceleration is " +String.valueOf(answer));
+    }
+
     //Free Fall Formulas
     public void freefalldistance(EditText var1, EditText var2, TextView results){
         double g = Double.parseDouble(var1.getText().toString());
@@ -44,6 +64,25 @@ public class Calculations {
         double t = Double.parseDouble(var2.getText().toString());
         double answer = v + (g*t);
         results.setText("The Freefall Velocity is " +String.valueOf(answer));
+    }
+
+    //Circular Formulas
+    public void circularacceleration(EditText var1, EditText var2, TextView results){
+        double vt = Double.parseDouble(var1.getText().toString());
+        double r = Double.parseDouble(var2.getText().toString());
+        double answer = (Math.pow(vt, 2))/r;
+        results.setText("The Centripetal Acceleration is " +String.valueOf(answer));
+    }
+    public void circularfrequency(EditText var1, TextView results){
+        double t = Double.parseDouble(var1.getText().toString());
+        double answer = (2*Math.PI)/t;
+        results.setText("The Angular Frequency is " +String.valueOf(answer));
+    }
+    public void circularvelocity(EditText var1, EditText var2, TextView results){
+        double w = Double.parseDouble(var1.getText().toString());
+        double r = Double.parseDouble(var2.getText().toString());
+        double answer = w*r;
+        results.setText("The Tangential Velocity is " +String.valueOf(answer));
     }
 
 

@@ -22,6 +22,8 @@ public class PhysicsActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
 
     private String[] titles1 = new String[]{"Free Fall Distance", "Time of Fall", "Final Velocity"};
+    private String[] titles2 = new String[]{"Speed", "Velocity", "Acceleration"};
+    private String[] titles3 = new String[]{"Centripetal Acceleration", "Angular Frequency", "Tangential Velocity"};
 
 
     @Override
@@ -34,7 +36,19 @@ public class PhysicsActivity extends AppCompatActivity {
         fragAdapter = new PhysicsFragAdapter(this);
 
         viewPager.setAdapter(fragAdapter);
-        new TabLayoutMediator(tabs, viewPager,((tab, position) -> tab.setText(titles1[position]))).attach();
+
+        switch(calc.getPhysicsData()){
+            case "Velocity":
+                new TabLayoutMediator(tabs, viewPager,((tab, position) -> tab.setText(titles2[position]))).attach();
+                break;
+            case "Freefall":
+                new TabLayoutMediator(tabs, viewPager,((tab, position) -> tab.setText(titles1[position]))).attach();
+                break;
+            case "Circular":
+                new TabLayoutMediator(tabs, viewPager,((tab, position) -> tab.setText(titles3[position]))).attach();
+                break;
+
+        }
     }
 
     public void backButton (View v){

@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/solvequestiondisplay"
         android:layout_width="83dp"
-        android:layout_height="26dp"
+        android:layout_height="46dp"
         android:layout_marginTop="100dp"
         android:text="Solve for"
         android:textAlignment="center"
@@ -97,9 +97,9 @@
         android:inputType="numberDecimal"
         android:minHeight="48dp"
         android:text="0"
-        app:layout_constraintEnd_toEndOf="@+id/var2display"
+        app:layout_constraintEnd_toEndOf="@+id/var1display"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/var2display"
+        app:layout_constraintStart_toStartOf="@+id/var1display"
         app:layout_constraintTop_toBottomOf="@+id/var2display" />
 
     <EditText
@@ -111,9 +111,9 @@
         android:inputType="numberDecimal"
         android:minHeight="48dp"
         android:text="0"
-        app:layout_constraintEnd_toEndOf="@+id/var3display"
+        app:layout_constraintEnd_toEndOf="@+id/var1display"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/var3display"
+        app:layout_constraintStart_toStartOf="@+id/var1display"
         app:layout_constraintTop_toBottomOf="@+id/var3display" />
 
     <Button
@@ -138,8 +138,9 @@
 
     <ImageView
         android:id="@+id/physicsformula"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="61dp"
+        android:scaleType="fitXY"
         android:layout_marginBottom="16dp"
         android:src="@drawable/formula_freefalldistance"
         app:layout_constraintBottom_toBottomOf="parent"
