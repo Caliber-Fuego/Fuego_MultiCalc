@@ -91,6 +91,7 @@ public class PhysicsFragment2 extends Fragment {
                         break;
                     case "Velocity":
                         calc.velocityaverage(var1edit, var2edit, results);
+                        break;
                     case "Circular":
                         calc.circularfrequency(var1edit, results);
                         break;

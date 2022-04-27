@@ -88,6 +88,7 @@ public class PhysicsFragment3 extends Fragment {
                         break;
                     case "Velocity":
                         calc.velocityaccel(var1edit, var2edit, results);
+                        break;
                     case "Circular":
                         calc.circularvelocity(var1edit, var2edit, results);
                         break;
