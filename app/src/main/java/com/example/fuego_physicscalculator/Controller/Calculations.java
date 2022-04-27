@@ -23,6 +23,8 @@ public class Calculations {
         Calculations.physicsData = physicsData;
     }
 
+//Physics------------------------------------------------------------------------------------------------
+
     //Velocity Formulas
     public void velocitynormal(EditText var1, EditText var2, TextView results){
         double d = Double.parseDouble(var1.getText().toString());
@@ -85,6 +87,8 @@ public class Calculations {
         results.setText("The Tangential Velocity is " +String.valueOf(answer));
     }
 
+
+//Geometry------------------------------------------------------------------------------------------------
 
     //Rectangle
     public void rectangleArea(EditText var1edit, EditText var2edit, TextView results){
@@ -181,4 +185,47 @@ public class Calculations {
         double v = Double.parseDouble(var2edit.getText().toString());
         double answer = v/(Math.PI*Math.pow(r,2));
         results.setText("The Height of the \nCylinder is " +String.valueOf(answer));
-    }}
+    }
+    //Ellipse
+    public void ellipseArea(EditText var1edit, EditText var2edit, TextView results){
+        double a = Double.parseDouble(var1edit.getText().toString());
+        double b = Double.parseDouble(var2edit.getText().toString());
+        double answer = Math.PI * a * b;
+        results.setText("The Area of the \nEllipse is " +String.valueOf(answer));
+    }
+    public void ellipseVolume(EditText var1edit, EditText var2edit,EditText var3edit, TextView results){
+        double a = Double.parseDouble(var1edit.getText().toString());
+        double b = Double.parseDouble(var2edit.getText().toString());
+        double c = Double.parseDouble(var3edit.getText().toString());
+        double constant = 1.33333333333;
+
+        double answer = (constant)*Math.PI*(a)*(b)*(c);
+        results.setText("The Volume of the \nEllipsoid is " +String.valueOf(answer));
+    }
+
+    public void ellipseAxisA(EditText var1edit, EditText var2edit,EditText var3edit, TextView results){
+        double b = Double.parseDouble(var1edit.getText().toString());
+        double c = Double.parseDouble(var2edit.getText().toString());
+        double v = Double.parseDouble(var3edit.getText().toString());
+
+        double answer = 3*(v/(4*Math.PI*b*c));
+        results.setText("The Volume of the \nEllipsoid is " +String.valueOf(answer));
+    }
+    public void ellipseAxisB(EditText var1edit, EditText var2edit,EditText var3edit, TextView results){
+        double a = Double.parseDouble(var1edit.getText().toString());
+        double c = Double.parseDouble(var2edit.getText().toString());
+        double v = Double.parseDouble(var3edit.getText().toString());
+
+        double answer = 3*(v/(4*Math.PI*a*c));
+        results.setText("The Volume of the \nEllipsoid is " +String.valueOf(answer));
+    }
+
+    public void ellipseAxisC(EditText var1edit, EditText var2edit,EditText var3edit, TextView results){
+        double a = Double.parseDouble(var1edit.getText().toString());
+        double b = Double.parseDouble(var2edit.getText().toString());
+        double v = Double.parseDouble(var3edit.getText().toString());
+
+        double answer = 3*(v/(4*Math.PI*a*b));
+        results.setText("The Volume of the \nEllipsoid is " +String.valueOf(answer));
+    }
+}

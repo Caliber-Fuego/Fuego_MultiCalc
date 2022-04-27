@@ -39,4 +39,9 @@ public class GeometryOptions extends AppCompatActivity {
         startActivity(openGeometry);
         calc.setShapeData("Circle");
     }
+    public void gotoEllipse (View view){
+        Intent openGeometry = new Intent(this, MainActivity.class);
+        startActivity(openGeometry);
+        calc.setShapeData("Ellipse");
+    }
 }

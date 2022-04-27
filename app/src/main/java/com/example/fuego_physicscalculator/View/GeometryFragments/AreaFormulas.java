@@ -63,6 +63,14 @@ public class AreaFormulas extends Fragment {
                 variable3.setVisibility(View.INVISIBLE);
                 var3edit.setVisibility(View.INVISIBLE);
                 break;
+            case "Ellipse":
+                variable1.setText("Enter the Major Radius (a)");
+                variable2.setText("Enter the Minor Radius  (b)");
+                variable2.setVisibility(View.VISIBLE);
+                var2edit.setVisibility(View.VISIBLE);
+                variable3.setVisibility(View.INVISIBLE);
+                var3edit.setVisibility(View.INVISIBLE);
+                break;
         }
 
         solvebtn.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +85,9 @@ public class AreaFormulas extends Fragment {
                         break;
                     case "Circle":
                         calc.circleArea(var1edit, results);
+                        break;
+                    case "Ellipse":
+                        calc.ellipseArea(var1edit, var2edit, results);
                         break;
                 }
             }

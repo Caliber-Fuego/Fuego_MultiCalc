@@ -66,6 +66,20 @@ public class VolumeFormulas extends Fragment {
                 variable3.setVisibility(View.INVISIBLE);
                 var3edit.setVisibility(View.INVISIBLE);
                 break;
+            case "Ellipse":
+                solvefor = "Volume";
+                varsolve.setText("Solve for volume (v)");
+                variable1.setText("Enter the Semi Axis a (a)");
+                variable2.setText("Enter the Semi Axis b (b)");
+                variable3.setText("Enter the Semi Axis c (c)");
+                geometrybtn2.setText("axis A");
+                geometrybtn3.setText("axis C");
+                geometrybtn4.setText("axis B");
+                variable2.setVisibility(View.VISIBLE);
+                var2edit.setVisibility(View.VISIBLE);
+                variable3.setVisibility(View.VISIBLE);
+                var3edit.setVisibility(View.VISIBLE);
+                break;
         }
 
         geometrybtn1.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +109,17 @@ public class VolumeFormulas extends Fragment {
                         variable3.setVisibility(View.INVISIBLE);
                         var3edit.setVisibility(View.INVISIBLE);
                         break;
+                    case "Ellipse":
+                        solvefor = "Volume";
+                        varsolve.setText("Solve for volume (v)");
+                        variable1.setText("Enter the Semi Axis a (a)");
+                        variable2.setText("Enter the Semi Axis b (b)");
+                        variable3.setText("Enter the Semi Axis c (c)");
+                        variable2.setVisibility(View.VISIBLE);
+                        var2edit.setVisibility(View.VISIBLE);
+                        variable3.setVisibility(View.VISIBLE);
+                        var3edit.setVisibility(View.VISIBLE);
+                        break;
                 }
             }
         });
@@ -123,6 +148,17 @@ public class VolumeFormulas extends Fragment {
                         var2edit.setVisibility(View.VISIBLE);
                         variable3.setVisibility(View.INVISIBLE);
                         var3edit.setVisibility(View.INVISIBLE);
+                        break;
+                    case "Ellipse":
+                        solvefor = "Axis A";
+                        varsolve.setText("Solve for Semi Axis A (a)");
+                        variable1.setText("Enter the Semi Axis b (a)");
+                        variable2.setText("Enter the Semi Axis c (b)");
+                        variable3.setText("Enter the Volume (v)");
+                        variable2.setVisibility(View.VISIBLE);
+                        var2edit.setVisibility(View.VISIBLE);
+                        variable3.setVisibility(View.VISIBLE);
+                        var3edit.setVisibility(View.VISIBLE);
                         break;
                 }
 
@@ -154,6 +190,18 @@ public class VolumeFormulas extends Fragment {
                         variable3.setVisibility(View.INVISIBLE);
                         var3edit.setVisibility(View.INVISIBLE);
                         break;
+                    case "Ellipse":
+                        solvefor = "Axis C";
+                        varsolve.setText("Solve for Semi Axis C (a)");
+                        variable1.setText("Enter the Semi Axis a (a)");
+                        variable2.setText("Enter the Semi Axis b (b)");
+                        variable3.setText("Enter the Volume (v)");
+                        variable2.setVisibility(View.VISIBLE);
+                        var2edit.setVisibility(View.VISIBLE);
+                        variable3.setVisibility(View.VISIBLE);
+                        var3edit.setVisibility(View.VISIBLE);
+                        break;
+
                 }
             }
         });
@@ -173,6 +221,17 @@ public class VolumeFormulas extends Fragment {
                         variable3.setVisibility(View.VISIBLE);
                         var3edit.setVisibility(View.VISIBLE);
                     break;
+                    case "Ellipse":
+                        solvefor = "Axis B";
+                        varsolve.setText("Solve for Semi Axis B (b)");
+                        variable1.setText("Enter the Semi Axis a (a)");
+                        variable2.setText("Enter the Semi Axis c (c)");
+                        variable3.setText("Enter the Volume (v)");
+                        variable2.setVisibility(View.VISIBLE);
+                        var2edit.setVisibility(View.VISIBLE);
+                        variable3.setVisibility(View.VISIBLE);
+                        var3edit.setVisibility(View.VISIBLE);
+                        break;
 
                 }
             }
@@ -224,6 +283,22 @@ public class VolumeFormulas extends Fragment {
                                 break;
                             case "Height":
                                 calc.circleHeight(var1edit, var2edit, results);
+                                break;
+                        }
+                        break;
+                    case "Ellipse":
+                        switch (solvefor){
+                            case "Volume":
+                                calc.ellipseVolume(var1edit, var2edit, var3edit, results);
+                                break;
+                            case "Axis A":
+                                calc.ellipseAxisA(var1edit, var2edit, var3edit, results);
+                                break;
+                            case "Axis B":
+                                calc.ellipseAxisB(var1edit, var2edit, var3edit, results);
+                                break;
+                            case "Axis C":
+                                calc.ellipseAxisC(var1edit, var2edit, var3edit, results);
                                 break;
                         }
                         break;
